@@ -34,25 +34,19 @@ src/
 - A React application created with a bundler such as Vite, Create React App, or Next.js
 - `lucide-react` for the reset icon
 
-This repository currently contains the component source only. It does not include a `package.json`, application entrypoint, or npm scripts.
+The repository includes a Vite application shell and npm scripts, so it can be run directly from the project root.
 
 ## Installation
 
-Add the component files to an existing React application, then install the icon dependency:
+Install the project dependencies from the repository root:
 
 ```bash
-npm install lucide-react
-```
-
-Make sure the host application has React installed as well:
-
-```bash
-npm install react react-dom
+npm install
 ```
 
 ## Usage
 
-Import and render the component from your application entrypoint:
+The application entrypoint already renders the component. To use it from another React application, import it like this:
 
 ```jsx
 import TicTacToe from "./components/TicTacToe/TicTacToe";
@@ -60,12 +54,6 @@ import TicTacToe from "./components/TicTacToe/TicTacToe";
 export default function App() {
   return <TicTacToe />;
 }
-```
-
-The component imports its stylesheet internally, so no additional CSS import is required:
-
-```jsx
-import "./components/TicTacToe/TicTacToe.css";
 ```
 
 The stylesheet loads the `Kalam` and `Inter` fonts from Google Fonts. For an offline deployment, replace that import with locally hosted fonts.
@@ -83,14 +71,26 @@ Board cells can be focused and activated with `Enter` or `Space`.
 
 ## Development
 
-Because this repository does not currently include an application shell or package scripts, run it through the React project that hosts these files. A typical Vite setup would use:
+Run the development server from the project root:
 
 ```bash
 npm install
 npm run dev
 ```
 
-The exact commands depend on the host application's configuration.
+Vite will print the local URL, usually `http://localhost:5173`.
+
+Create a production build with:
+
+```bash
+npm run build
+```
+
+Preview the production build locally with:
+
+```bash
+npm run preview
+```
 
 ## License
 
