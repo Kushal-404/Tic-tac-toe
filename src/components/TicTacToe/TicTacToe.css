@@ -61,11 +61,14 @@
   stroke-width: 4;
   stroke-linecap: round;
   opacity: 0.55;
+  pointer-events: none;
 }
 
 .cell-hit {
   fill: transparent;
   transition: fill 0.15s ease;
+  pointer-events: all;
+  touch-action: manipulation;
 }
 
 .cell-hit:hover {
@@ -85,6 +88,7 @@
   stroke-dasharray: var(--len);
   stroke-dashoffset: var(--len);
   animation: draw 0.32s ease-out forwards;
+  pointer-events: none;
 }
 
 .mark-o {
@@ -97,6 +101,7 @@
   transform-origin: center;
   transform: rotate(-90deg);
   animation: draw 0.4s ease-out forwards;
+  pointer-events: none;
 }
 
 .win-line {
@@ -106,6 +111,7 @@
   stroke-dasharray: var(--len);
   stroke-dashoffset: var(--len);
   animation: draw 0.35s ease-out forwards;
+  pointer-events: none;
 }
 
 @keyframes draw {
